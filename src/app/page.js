@@ -44,7 +44,7 @@ export default function Home() {
         <div className="my-4">
           <label for="" class="block text-sm leading-6 text-slate-500 font-bold">주소</label>
           <div className="mt-1">
-            <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white">우편번호 검색</a>
+            <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
           </div>
           <div class="relative mt-1 rounded-md shadow-sm">
             <input type="text" name="price" id="adress" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="my-4">
             <label for="" class="block text-sm leading-6 text-slate-500 font-bold">주소</label>
             <div className="mt-1">
-              <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white">우편번호 검색</a>
+              <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
             </div>
             <div class="relative mt-1 rounded-md shadow-sm">
               <input type="text" name="price" id="adress" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
@@ -134,6 +134,13 @@ export default function Home() {
 
   const handleTabClick = (id) => {
     setActiveTab(id);
+  };
+
+
+
+  const [isOn, setIsOn] = useState(false);
+  const handleButtonClick = () => {
+    setIsOn(!isOn);
   };
 
   return (
@@ -162,8 +169,8 @@ export default function Home() {
       <br />
 
 
-      <div className="sticky bottom-0 mt-3 p-4 bg-white">
-        <a href="#" className="block p-3 border text-center bg-blue-600 text-white">입력완료</a>
+      <div className=" mt-3 p-4 bg-white">
+        <button onClick={handleButtonClick} className={`block w-full p-3 border text-center rounded-md ${isOn ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400'}`} >회원 가입 하기</button>
       </div>
     </div>
   );
