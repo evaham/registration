@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function Home() {
   const tabs = [
     { id: 1, name: '일반회원', content: (
-    <div>
+    <form>
       <div className="p-4 bg-white">
         <p className="flex mt-4 items-center text-blue-500 tracking-tighter">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-6 h-6 fill-blue-500 mr-1">
@@ -54,10 +54,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </form>
     ) },
     { id: 2, name: '사업자회원', content: (
-      <div className="tab-content">
+      <form>
         <div className="p-4 bg-white">
           <p className="flex mt-4 items-center text-blue-500 tracking-tighter">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-6 h-6 fill-blue-500 mr-1">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </form>
 
     ) },
   ];
