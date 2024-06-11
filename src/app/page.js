@@ -5,143 +5,25 @@ import { useState } from 'react';
 
 export default function Home() {
   const tabs = [
-    { id: 1, name: '일반회원', content: (
-    <form>
-      <div className="p-4 bg-white">
-        <p className="flex mt-4 items-center text-blue-500 tracking-tighter">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-6 h-6 fill-blue-500 mr-1">
-            <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-          </svg>
-          필수 입력사항
-        </p>
-
-        <div className="my-4">
-          <label for="name" class="flex items-center text-sm leading-6 text-slate-500 font-bold">고객명
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-              <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-            </svg>
-            
-          </label>
-          <div class="relative mt-1 rounded-md shadow-sm">
-            <input type="text" name="name" id="name" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
-          </div>
-        </div>
-        <div className="my-4">
-          <label for="phone" class="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-              <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-            </svg>
-
-          </label>
-          <div class="relative mt-1 rounded-md shadow-sm">
-            <input type="tel" name="phone" id="phone" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
-            <div class="absolute inset-y-0 right-0 flex items-center"></div>
-          </div>
-        </div>
-      </div>
-      <div className="mt-3 p-4 bg-white">
-        <p className="flex my-3 text-slate-600 items-center tracking-tighter">선택 입력사항</p>
-        <div className="my-4">
-          <label for="" class="block text-sm leading-6 text-slate-500 font-bold">주소</label>
-          <div className="mt-1">
-            <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
-          </div>
-          <div class="relative mt-1 rounded-md shadow-sm">
-            <input type="text" name="price" id="adress" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
-          </div>
-          <div class="relative mt-1 rounded-md shadow-sm">
-            <input type="text" id="adressText" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="상세주소를 입력해주세요"/>
-          </div>
-        </div>
-      </div>
-    </form>
-    ) },
-    { id: 2, name: '사업자회원', content: (
-      <form>
-        <div className="p-4 bg-white">
-          <p className="flex mt-4 items-center text-blue-500 tracking-tighter">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-6 h-6 fill-blue-500 mr-1">
-              <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-            </svg>
-            필수 입력사항
-          </p>
-          <div className="my-4">
-            <label for="name" class="flex items-center text-sm leading-6 text-slate-500 font-bold ">고객명
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-                <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-              </svg>
-            </label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="text" name="name" id="name" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
-            </div>
-          </div>
-          <div className="my-4">
-            <label for="phone" class="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-                <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-              </svg>
-
-            </label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="tel" name="phone" id="phone" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
-            </div>
-          </div>
-          <div className="my-4">
-            <label for="phone" class="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자상호
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-                <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-              </svg>
-
-            </label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="tel" name="phone" id="phone" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="사업자 상호를 입력하세요"/>
-            </div>
-          </div>
-          <div className="my-4">
-            <label for="phone" class="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-5 h-5 fill-blue-500 ml-1">
-                <path xmlns="http://www.w3.org/2000/svg" d="M389-235 163-460l84-85 142 142 324-323 84 84-408 407Z"/>  
-              </svg>
-            </label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="tel" name="phone" id="phone" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
-            </div>
-          </div>
-
-
-        </div>
-        <div className="mt-3 p-4 bg-white">
-          <p className="flex my-3 text-slate-600 items-center tracking-tighter">선택 입력사항</p>
-          <div className="my-4">
-            <label for="" class="block text-sm leading-6 text-slate-500 font-bold">주소</label>
-            <div className="mt-1">
-              <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
-            </div>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="text" name="price" id="adress" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
-            </div>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="text" id="adressText" class="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="상세주소를 입력해주세요"/>
-            </div>
-          </div>
-        </div>
-      </form>
-
-    ) },
+    { id: 1, name: '일반회원',},
+    { id: 2, name: '사업자회원',},
   ];
 
+  // 탭 클릭시 컨텐츠변경
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
 
-
-
+  // 입력완료 버튼 스타일변경
   const [isOn, setIsOn] = useState(false);
   const handleButtonClick = () => {
     setIsOn(!isOn);
   };
+
+
+
+
 
   return (
     <div className="">
@@ -161,12 +43,127 @@ export default function Home() {
 
       {tabs.map((tab) => (
         <div key={tab.id} style={{ display: activeTab === tab.id ? 'block' : 'none' }}>
-          {tab.content}
+
+          <form style={{display: 1 === tab.id ? 'block' : 'none'}}>
+            <div className="p-4 bg-white">
+              <p className="flex mt-4 items-center text-pink-500 tracking-tighter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 mr-1">
+                  <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                </svg>
+                필수 입력
+              </p>
+
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">고객명
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" name="name" id="name" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
+                </div>
+              </div>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
+                  <div className="absolute inset-y-0 right-0 flex items-center"></div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-3 p-4 bg-white">
+              <p className="flex my-3 text-slate-600 items-center tracking-tighter">선택 입력</p>
+              <div className="my-4">
+                <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
+                <div className="mt-1">
+                  <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
+                </div>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" name="price" id="adress" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
+                </div>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" id="adressText" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="상세주소를 입력해주세요"/>
+                </div>
+              </div>
+            </div>
+          </form>
+          <form style={{display: 2 === tab.id ? 'block' : 'none'}}>
+            
+            <div className="p-4 bg-white">
+              <p className="flex mt-4 items-center text-pink-500 tracking-tighter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 mr-1">
+                  <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                </svg>
+                필수 입력
+              </p>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold ">고객명
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" name="name" id="name" autoFocus className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
+                </div>
+              </div>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
+                </div>
+              </div>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자상호
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="사업자 상호를 입력하세요"/>
+                </div>
+              </div>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
+                </div>
+              </div>
+
+
+            </div>
+            <div className="mt-3 p-4 bg-white">
+              <p className="flex my-3 text-slate-600 items-center tracking-tighter">선택 입력</p>
+              <div className="my-4">
+                <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
+                <div className="mt-1">
+                  <a href="" className="block w-2/4 p-2 border text-center bg-blue-500 text-white rounded-md">우편번호 검색</a>
+                </div>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" name="price" id="adress" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder=""/>
+                </div>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" id="adressText" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="상세주소를 입력해주세요"/>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       ))}
 
-
-      <br />
 
 
       <div className=" mt-3 p-4 bg-white">
