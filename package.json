@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy":"touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "next start",
     "lint": "next lint"
   },
