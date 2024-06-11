@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className={notoSansKr.className}>
-      <body className="bg-slate-100">{children}</body>
+      <body className="">{children}</body>
     </html>
   );
 }
