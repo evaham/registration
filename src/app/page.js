@@ -34,7 +34,7 @@ export default function Home() {
       </div>
       <div className="flex font-bold border border-b-0 border-slate-200">
         {tabs.map((tab) => (
-          <a key={tab.id} className={`flex-1 py-4 bg-slate-200 text-slate-400 text-center ${activeTab === tab.id ? 'bg-white text-slate-900' : ''}`} onClick={() => handleTabClick(tab.id)}>
+          <a key={tab.id} className={`flex-1 py-4 text-center ${activeTab === tab.id ? 'bg-white text-slate-800' : 'bg-slate-200 text-slate-400'}`} onClick={() => handleTabClick(tab.id)}>
             {tab.name}
           </a>
         ))}
