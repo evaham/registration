@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from 'react';
+import Modal from "./component/modal";
 
 export default function Home() {
   const tabs = [
@@ -22,7 +23,15 @@ export default function Home() {
   };
 
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
 
   return (
@@ -32,6 +41,7 @@ export default function Home() {
         <p className="text-4xl leading-tight font-bold tracking-tighter text-slate-700"><span className="text-blue-600 italic mr-3">SPEED</span> 회원가입</p>
         <p className="text-slate-500">137-81-39709</p>
       </div>
+
       <div className="flex font-bold border border-b-0 border-slate-200">
         {tabs.map((tab) => (
           <a key={tab.id} className={`flex-1 py-4 text-center ${activeTab === tab.id ? 'bg-white text-slate-800' : 'bg-slate-200 text-slate-400'}`} onClick={() => handleTabClick(tab.id)}>
@@ -115,7 +125,6 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
                     <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
                   </svg>
-
                 </label>
                 <div className="relative mt-1 rounded-md shadow-sm">
                   <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
@@ -142,9 +151,8 @@ export default function Home() {
                   <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
                 </div>
               </div>
-
-
             </div>
+
             <div className="mt-3 p-4 bg-white">
               <p className="flex my-3 text-slate-600 items-center tracking-tighter">선택 입력</p>
               <div className="my-4">
@@ -164,9 +172,43 @@ export default function Home() {
         </div>
       ))}
 
+      <div className="mt-3 p-4">
+        <p className="flex my-3 text-slate-600 items-center tracking-tighter">약관동의</p>
+      <div className="mt-1 border rounded-md bg-slate-50">
+          <div className="flex border-b p-4">
+            <a href="" className="flex">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" className="fill-slate-300 mr-2" >
+                <path d="M423.28-291.22 708.87-576.8l-62.46-62.7-223.13 223.13L312.15-527.5l-62.45 62.7 173.58 173.58ZM480-71.87q-84.91 0-159.34-32.12-74.44-32.12-129.5-87.17-55.05-55.06-87.17-129.5Q71.87-395.09 71.87-480t32.12-159.34q32.12-74.44 87.17-129.5 55.06-55.05 129.5-87.17 74.43-32.12 159.34-32.12t159.34 32.12q74.44 32.12 129.5 87.17 55.05 55.06 87.17 129.5 32.12 74.43 32.12 159.34t-32.12 159.34q-32.12 74.44-87.17 129.5-55.06 55.05-129.5 87.17Q564.91-71.87 480-71.87Z"/>
+              </svg>
+              모두동의
+            </a>
+          </div>
+          <ul className="p-4">
+            <li className="flex items-center">
+              <a href="" className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className="fill-blue-500 mr-2" >
+                  <path d="M423.28-291.22 708.87-576.8l-62.46-62.7-223.13 223.13L312.15-527.5l-62.45 62.7 173.58 173.58ZM480-71.87q-84.91 0-159.34-32.12-74.44-32.12-129.5-87.17-55.05-55.06-87.17-129.5Q71.87-395.09 71.87-480t32.12-159.34q32.12-74.44 87.17-129.5 55.06-55.05 129.5-87.17 74.43-32.12 159.34-32.12t159.34 32.12q74.44 32.12 129.5 87.17 55.05 55.06 87.17 129.5 32.12 74.43 32.12 159.34t-32.12 159.34q-32.12 74.44-87.17 129.5-55.06 55.05-129.5 87.17Q564.91-71.87 480-71.87Z"/>
+                </svg>                   
+                이용약관 <span className="ml-1 text-blue-600">(필수)</span>
+              </a>
+              <button className="text-sm ml-auto underline" onClick={handleOpenModal}>내용보기</button>
+            </li>
+            <li className="flex items-center mt-4">
+              <a href="" className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className="fill-slate-300 mr-2">
+                  <path d="M423.28-291.22 708.87-576.8l-62.46-62.7-223.13 223.13L312.15-527.5l-62.45 62.7 173.58 173.58ZM480-71.87q-84.91 0-159.34-32.12-74.44-32.12-129.5-87.17-55.05-55.06-87.17-129.5Q71.87-395.09 71.87-480t32.12-159.34q32.12-74.44 87.17-129.5 55.06-55.05 129.5-87.17 74.43-32.12 159.34-32.12t159.34 32.12q74.44 32.12 129.5 87.17 55.05 55.06 87.17 129.5 32.12 74.43 32.12 159.34t-32.12 159.34q-32.12 74.44-87.17 129.5-55.06 55.05-129.5 87.17Q564.91-71.87 480-71.87Z"/>
+                </svg>                    
+                쿠폰, 특가상품 이벤트 등 혜택/정보 <span className="ml-1 text-blue-600">(선택)</span>
+              </a>
+              <button className="text-sm ml-auto underline" onClick={handleOpenModal}>내용보기</button>
+            </li>
+          </ul>
+        </div>
+      </div>
 
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}></Modal>
 
-      <div className=" mt-3 p-4 bg-white">
+      <div className=" mt-5 p-4 bg-white">
         <button onClick={handleButtonClick} className={`block w-full p-3 border text-center rounded-md ${isOn ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400'}`} >회원 가입 하기</button>
       </div>
     </div>
