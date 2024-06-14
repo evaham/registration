@@ -111,26 +111,6 @@ export default function Home() {
                 필수 입력
               </p>
               <div className="my-4">
-                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold ">고객명
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
-                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
-                  </svg>
-                </label>
-                <div className="relative mt-1 rounded-md shadow-sm">
-                  <input type="text" name="name" id="name" autoFocus className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
-                </div>
-              </div>
-              <div className="my-4">
-                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
-                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
-                  </svg>
-                </label>
-                <div className="relative mt-1 rounded-md shadow-sm">
-                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
-                </div>
-              </div>
-              <div className="my-4">
                 <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자상호
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
                     <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
@@ -151,6 +131,28 @@ export default function Home() {
                   <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
                 </div>
               </div>
+
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold ">고객명
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="text" name="name" id="name" autoFocus className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="고객명을 입력하세요"/>
+                </div>
+              </div>
+              <div className="my-4">
+                <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="items-center w-4 h-4 fill-pink-500 ml-1">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M440-120v-264L254-197l-57-57 187-186H120v-80h264L197-706l57-57 186 187v-264h80v264l186-187 57 57-187 186h264v80H576l187 186-57 57-186-187v264h-80Z"/>                
+                  </svg>
+                </label>
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <input type="tel" name="phone" id="phone" className="block w-full rounded-md border border-slate-300 p-1.5 text-gray-900 outline-none  placeholder:text-gray-400 focus:border-blue-600" placeholder="휴대폰 번호를 입력하세요"/>
+                </div>
+              </div>
+
             </div>
 
             <div className="mt-3 p-4 bg-white">
@@ -172,9 +174,9 @@ export default function Home() {
         </div>
       ))}
 
-      <div className="mt-3 p-4">
+      <div className="mt-3 p-4 hidden">
         <p className="flex my-3 text-slate-600 items-center tracking-tighter">약관동의</p>
-      <div className="mt-1 border rounded-md bg-slate-50">
+        <div className="mt-1 border rounded-md bg-slate-50">
           <div className="flex border-b p-4">
             <a href="" className="flex">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" className="fill-slate-300 mr-2" >
@@ -205,9 +207,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
-
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}></Modal>
-
       <div className=" mt-5 p-4 bg-white">
         <button onClick={handleButtonClick} className={`block w-full p-3 border text-center rounded-md ${isOn ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400'}`} >회원 가입 하기</button>
       </div>
