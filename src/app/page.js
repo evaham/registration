@@ -138,7 +138,7 @@ export default function Home() {
           {tabs.map((tab) => (
             <div key={tab.id} className="my-4" style={{ display: activeTab === tab.id ? 'block' : 'none' }}>
               <form style={{display: 1 === tab.id ? 'block' : 'none'}}>
-                <div className="mx-4 p-4 bg-slate-50 rounded-md">
+                <div className="mx-4 p-4 bg-slate-100 rounded-md">
                   <p className="flex items-center text-slate-600 tracking-tighter">
                     <svg xmlns="http://www.w3.org/2000/svg" className="flex w-3 h-3 mr-1 items-center fill-[#06CC99]" viewBox="0 -960 960 960">
                       <path d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Z"/>
@@ -187,7 +187,7 @@ export default function Home() {
                 </div>
               </form>
               <form style={{display: 2 === tab.id ? 'block' : 'none'}}>
-                <div className="mx-4 p-4 bg-slate-50 rounded-md">
+                <div className="mx-4 p-4 bg-slate-100 rounded-md">
                   <p className="flex items-center text-slate-600 tracking-tighter">
                     <svg xmlns="http://www.w3.org/2000/svg" className="flex w-3 h-3 mr-1 items-center fill-[#06CC99]" viewBox="0 -960 960 960">
                       <path d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Z"/>
@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* <div className="mt-3 p-4">
         <p className="flex my-3 text-slate-600 items-center tracking-tighter">약관동의</p>
-        <div className="mt-1 border rounded-md bg-slate-50">
+        <div className="mt-1 border rounded-md bg-slate-100">
           <div className="flex border-b p-4">
             <label className="flex">
               <input type="checkbox" checked={agreeAll} onChange={handleAgreeAllChange} className="hidden peer"/>
