@@ -32,6 +32,8 @@ export default function Home() {
   };
 
   
+
+  
   // 화면 숨기기
   const [isHidden, setIsHidden] = useState(false);
   const handleHide = () => {
@@ -99,75 +101,50 @@ export default function Home() {
               </a>
             ))}
           </div>
-          
 
-          {tabs.map((tab) => (
-            <div key={tab.id} className="mt-4 my-2" style={{ display: activeTab === tab.id ? 'block' : 'none' }}>
-              <form style={{display: 1 === tab.id ? 'block' : 'none'}}>
-                <div className="mx-4 p-4 bg-slate-100 rounded-md">
-                  <div className="mb-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">고객명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative mt-1">
-                      <input type="text" name="name" id="name" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="고객명을 입력하세요"/>
-                    </div>
-                  </div>
-                  <div className="my-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative mt-1">
-                      <input type="tel" name="phone" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="휴대폰 번호를 입력하세요"/>
-                      <div className="absolute inset-y-0 right-0 flex items-center"></div>
-                    </div>
-                  </div>
-
-                  <div className="my-2">
-                    <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
-                    <div className="relative mt-1">
-                      <input type="text" name="price" id="adress" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
-                    </div>
+          <div className="mt-4 my-2">
+            <form>
+              <div className="mx-4 p-4 bg-slate-100 rounded-md">
+                <div className="mb-2">
+                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">고객명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                  <div className="relative mt-1">
+                    <input type="text" name="name" id="name" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="고객명을 입력하세요"/>
                   </div>
                 </div>
-              </form>
-              <form style={{display: 2 === tab.id ? 'block' : 'none'}}>
-                <div className="mx-4 p-4 bg-slate-100 rounded-md">
-                  <div className="mb-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold ">고객명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative mt-0.5">
-                      <input type="text" name="name" id="name" autoFocus className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="고객명을 입력하세요"/>
-                    </div>
-                  </div>
-                  <div className="my-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative flex mt-0.5 gap-1 items-center">
-                      <input type="tel" name="phone" id="phone" maxLength={3} onChange={handleInput1Change} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
-                      <span>-</span>
-                      <input type="tel" name="phone" id="phone" maxLength={4} onChange={handleInput2Change} ref={input2Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
-                      <span>-</span>
-                      <input type="tel" name="phone" id="phone" maxLength={4} ref={input3Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
-                    </div>
-                  </div>
-                  <div className="my-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative mt-0.5">
-                      <input type="tel" name="text" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자명을 입력하세요"/>
-                    </div>
-                  </div>
-                  <div className="my-2">
-                    <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                    <div className="relative mt-0.5">
-                      <input type="tel" name="phone" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자번호를 입력하세요"/>
-                    </div>
-                  </div>
-
-                  <div className="my-2">
-                    <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
-                    <div className="relative mt-0.5">
-                      <input type="text" name="price" id="adress" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
-                    </div>
+                <div className="my-2">
+                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                  <div className="relative flex mt-0.5 gap-1 items-center">
+                    <input type="tel" name="phone" id="phone" maxLength={3} onChange={handleInput1Change} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <span>-</span>
+                    <input type="tel" name="phone" id="phone" maxLength={4} onChange={handleInput2Change} ref={input2Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <span>-</span>
+                    <input type="tel" name="phone" id="phone" maxLength={4} ref={input3Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                   </div>
                 </div>
-              </form>
-            </div>
-          ))}
+
+                <div className="my-2" style={{display: 2 === activeTab ? 'block' : 'none'}}>
+                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                  <div className="relative mt-0.5">
+                    <input type="text" name="text" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자명을 입력하세요"/>
+                  </div>
+                </div>
+                <div className="my-2" style={{display: 2 === activeTab ? 'block' : 'none'}}>
+                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                  <div className="relative mt-0.5">
+                    <input type="number" name="phone" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자번호를 입력하세요"/>
+                  </div>
+                </div>
+
+                <div className="my-2">
+                  <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
+                  <div className="relative mt-1">
+                    <input type="text" name="price" id="adress" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+          </div>
         </div>
       )}
       <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
