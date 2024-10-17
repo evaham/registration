@@ -143,7 +143,6 @@ export default function Home() {
                 </div>
               </div>
             </form>
-            
           </div>
         </div>
       )}
