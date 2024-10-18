@@ -5,10 +5,7 @@ import { useState,useRef } from 'react';
 // import Modal from "./component/modal";
 
 export default function Home() {
-  const tabs = [
-    { id: 1, name: '일반회원',},
-    { id: 2, name: '사업자회원',},
-  ];
+
 
   const terms = `회원가입 및 개인정보 제공 동의 고객님의 방문에 감사드립니다.
 
@@ -24,15 +21,16 @@ export default function Home() {
 ③ 회원가입. 회원 식별, 포인트 적립 등...
  
   `
+  const tabs = [
+    { id: 1, name: '일반회원',},
+    { id: 2, name: '사업자회원',},
+  ];
 
   // 탭 클릭시 컨텐츠변경
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
-
-  
-
   
   // 화면 숨기기
   const [isHidden, setIsHidden] = useState(false);
@@ -40,20 +38,18 @@ export default function Home() {
     setIsHidden(true)
   }
 
-
   // 입력완료 버튼 스타일변경
-  const [isOn, setIsOn] = useState(false);
-  const handleButtonClick = () => {
-    setIsOn(!isOn);
-  };
+  // const [isOn, setIsOn] = useState(false);
+  // const handleButtonClick = () => {
+  //   setIsOn(!isOn);
+  // };
   
-
   // 현재 창 닫기
   const handleClose = () => {
     window.close(); 
   };
 
-  // 휴대전호 입력값 넘기기
+  // 휴대전화 입력 포커스 넘기기
   const input2Ref = useRef(null); // 두 번째 input 필드를 참조
   const input3Ref = useRef(null); // 세 번째 input 필드를 참조
 
@@ -71,8 +67,41 @@ export default function Home() {
     }
   };
 
+  // 사업자번호 입력 포커스 넘기기
+  const input5Ref = useRef(null); // 두 번째 input 필드를 참조
+  const input6Ref = useRef(null); // 세 번째 input 필드를 참조
+
+  // 첫 번째 입력 필드에서 3자리 입력되면 두 번째 필드로 이동
+  const handleInput4Change = (e) => {
+    if (e.target.value.length >= 3) {
+      input5Ref.current.focus();
+    }
+  };
+
+  // 두 번째 입력 필드에서 2자리 입력되면 세 번째 필드로 이동
+  const handleInput5Change = (e) => {
+    if (e.target.value.length >= 2) {
+      input6Ref.current.focus();
+    }
+  };
+
+
+  const [input1, setInput1] = useState(''); // 첫 번째 필드 상태
+  const [input2, setInput2] = useState(''); // 두 번째 필드 상태
+  const [input3, setInput3] = useState(''); // 세 번째 필드 상태
+  const [input4, setInput4] = useState(''); // 세 번째 필드 상태
+  const [input5, setInput5] = useState(''); // 세 번째 필드 상태
+  const [input6, setInput6] = useState(''); // 세 번째 필드 상태
+  const [input7, setInput7] = useState(''); // 세 번째 필드 상태
+  const [input8, setInput8] = useState(''); // 세 번째 필드 상태
+
+  const isTab1Valid = input1.length > 0 && input2.length > 2 && input3.length > 3 && input4.length > 3;
+  const isTab2Valid = input1.length > 0 && input2.length > 2 && input3.length > 3 && input4.length > 3 && input5.length > 0 && input6.length > 2 && input7.length > 1 && input8.length > 4;
+
+  const isButtonEnabled = activeTab === 1 ? isTab1Valid : isTab2Valid;
+
   return (
-    <div className="">
+    <div className="max-w-96 mx-auto">
       <div className="mx-4 py-4">
         <p className="text-4xl leading-tight font-bold tracking-tighter text-emerald-600/95">투게더마트</p>
         <p className="text-4xl leading-tight font-bold tracking-tighter text-slate-600"><span className="text-[#06CC99] italic mr-3">SPEED</span> 회원가입</p>
@@ -96,7 +125,7 @@ export default function Home() {
         <div className="">
           <div className="flex mx-4 rounded-full border font-bold border-slate-200 overflow-hidden">
             {tabs.map((tab) => (
-              <a key={tab.id} className={`flex-1 py-3 text-center ${activeTab === tab.id ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} onClick={() => handleTabClick(tab.id)}>
+              <a key={tab.id} id={tab.id} className={`flex-1 py-3 text-center ${activeTab === tab.id ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} onClick={() => handleTabClick(tab.id)}>
                 {tab.name}
               </a>
             ))}
@@ -104,41 +133,49 @@ export default function Home() {
 
           <div className="mt-4 my-2">
             <form>
-              <div className="mx-4 p-4 bg-slate-100 rounded-md">
+              <div className="mx-4 px-8 py-4 bg-slate-100 rounded-md">
                 <div className="mb-2">
                   <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">고객명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
                   <div className="relative mt-1">
-                    <input type="text" name="name" id="name" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="고객명을 입력하세요"/>
+                    <input type="text" name="name" value={input1} onChange={(e)=>{setInput1(e.target.value)}} className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                   </div>
                 </div>
                 <div className="my-2">
                   <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">휴대폰 번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
                   <div className="relative flex mt-0.5 gap-1 items-center">
-                    <input type="tel" name="phone" id="phone" maxLength={3} onChange={handleInput1Change} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <input type="tel" name="phone" value={input2} maxLength={3} onChange={(e)=>{setInput2(e.target.value); handleInput1Change(e)}} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                     <span>-</span>
-                    <input type="tel" name="phone" id="phone" maxLength={4} onChange={handleInput2Change} ref={input2Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <input type="tel" name="phone" value={input3} maxLength={4} onChange={(e)=>{setInput3(e.target.value);handleInput2Change(e)}} ref={input2Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                     <span>-</span>
-                    <input type="tel" name="phone" id="phone" maxLength={4} ref={input3Ref} className="flex flex-1 min-w-20 p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <input type="tel" name="phone" value={input4} maxLength={4} ref={input3Ref} onChange={(e)=>{setInput4(e.target.value)}} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                   </div>
                 </div>
-
-                <div className="my-2" style={{display: 2 === activeTab ? 'block' : 'none'}}>
-                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                  <div className="relative mt-0.5">
-                    <input type="text" name="text" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자명을 입력하세요"/>
+                
+                {activeTab === 2 &&(
+                  <div>
+                    <div className="my-2">
+                      <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자명<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                      <div className="relative mt-0.5">
+                        <input type="text" name="text" value={input5} onChange={(e)=>{setInput5(e.target.value)}} className="block w-full px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                      </div>
+                    </div>
+                    <div className="my-2">
+                      <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
+                      <div className="relative flex mt-0.5 gap-1 items-center">
+                        <input type="tel" name="phone" value={input6} maxLength={3} onChange={(e)=>{setInput6(e.target.value); handleInput4Change(e)}} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                        <span>-</span>
+                        <input type="tel" name="phone" value={input7} maxLength={2} onChange={(e)=>{setInput7(e.target.value); handleInput5Change(e)}} ref={input5Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                        <span>-</span>
+                        <input type="tel" name="phone" value={input8} maxLength={5} onChange={(e)=>{setInput8(e.target.value)}} ref={input6Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="my-2" style={{display: 2 === activeTab ? 'block' : 'none'}}>
-                  <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
-                  <div className="relative mt-0.5">
-                    <input type="number" name="phone" id="phone" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="사업자번호를 입력하세요"/>
-                  </div>
-                </div>
+                )}
 
                 <div className="my-2">
                   <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
                   <div className="relative mt-1">
-                    <input type="text" name="price" id="adress" className="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none  placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                    <input type="text" name="price" id="adress" className="block w-full px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                   </div>
                 </div>
               </div>
@@ -152,7 +189,7 @@ export default function Home() {
           <button onClick={handleHide} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">동의하고 회원가입</button>
         )}
         {isHidden &&(
-          <button onClick={handleButtonClick} className={`block w-full p-3 border text-center rounded-md ${isOn ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} >저장</button>
+          <button disabled={!isButtonEnabled} className={`block w-full p-3 border text-center rounded-md ${isButtonEnabled ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} >저장</button>
         )}
       </div>
     </div>
