@@ -162,11 +162,11 @@ export default function Home() {
                     <div className="my-2">
                       <label className="flex items-center text-sm leading-6 text-slate-500 font-bold">사업자번호<span className="ml-1 text-xs text-pink-400">(필수)</span></label>
                       <div className="relative flex mt-0.5 gap-1 items-center">
-                        <input type="number" name="number" value={input6} maxLength={3} onChange={(e)=>{setInput6(e.target.value); handleInput4Change(e)}} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                        <input type="number" inputmode="numeric" pattern="[0-9]*" value={input6} maxLength={3} onChange={(e)=>{setInput6(e.target.value); handleInput4Change(e)}} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                         <span>-</span>
-                        <input type="number" name="number" value={input7} maxLength={2} onChange={(e)=>{setInput7(e.target.value); handleInput5Change(e)}} ref={input5Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                        <input type="number" inputmode="numeric" pattern="[0-9]*" name="number" value={input7} maxLength={2} onChange={(e)=>{setInput7(e.target.value); handleInput5Change(e)}} ref={input5Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                         <span>-</span>
-                        <input type="number" name="number" value={input8} maxLength={5} onChange={(e)=>{setInput8(e.target.value)}} ref={input6Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
+                        <input type="number" inputmode="numeric" pattern="[0-9]*" name="number" value={input8} maxLength={5} onChange={(e)=>{setInput8(e.target.value)}} ref={input6Ref} className="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder=""/>
                       </div>
                     </div>
                   </div>
