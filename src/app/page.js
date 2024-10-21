@@ -103,12 +103,12 @@ export default function Home() {
             이용약관
           </p>
           <div className="overflow-y-scroll flex h-96 mt-2 p-4 bg-slate-100 rounded-md">
-            <div className="flex flex-col flex-1 font-sans whitespace-pre-wrap">
+            <div className="flex flex-col flex-1 font-sans break-all">
             <b className="text-lg mb-4">회원가입 약관</b>
             <b className="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>
-            <p>
-              고객님의 방문에 감사드립니다.<br />우리 매장은 개인정보보호법에 따라 고객님의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 최소한의 개인정보를 수집하고 있으며 다음과 같이 고객님의 동의가 필요합니다.
-            </p>
+            고객님의 방문에 감사드립니다.
+            <br /><br />
+            우리 매장은 개인정보보호법에 따라 고객님의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여   최소한의 개인정보를 수집하고 있으며 다음과 같이 고객님의 동의가 필요합니다.
 
             <b className="mt-6 mb-4">1. 개인정보 수집 및 이용목적</b>
             ① 회원 가입, 회원 식별, 포인트 적립 등 기본적인 서비스 제공 및 마케팅 활용을 위하여 아래와 같이 개인정보를 수집합니다.
@@ -119,8 +119,10 @@ export default function Home() {
             <br /><br />
 
             <table className="table-fix mt-6 leading-tight">
-              <col className="w-12" />
-              <col className="w-24" />
+              <colgroup>
+                <col className="w-12" />
+                <col className="w-24" />
+              </colgroup>
               <tbody>
                 <tr>
                   <td className="border border-slate-300 p-1">구분</td>
@@ -172,7 +174,7 @@ export default function Home() {
 
             <b className="mt-6 mb-4">4. 회원 탈퇴</b>
             회원으로 가입된 고객은 언제든지 방문, 서면 등으로 회원탈퇴를 요청할 수 있습니다.
-            <br />
+            <br /><br /><br /><br />
 
 
             </div>
