@@ -103,7 +103,7 @@ export default function Home() {
             이용약관
           </p>
           <div className="overflow-y-scroll flex h-96 mt-2 p-4 bg-slate-100 rounded-md">
-            <div className="flex flex-col flex-1 font-sans break-all">
+            <div className="flex flex-col flex-1 font-sans break-all text-slate-800">
             <b className="text-lg mb-4">회원가입 약관</b>
             <b className="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>
             고객님의 방문에 감사드립니다.
