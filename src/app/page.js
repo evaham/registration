@@ -19,6 +19,16 @@ export default function Home() {
     setActiveTab(id);
   };
   
+
+
+  const [activePage, setActivePage] = useState(1);
+
+  const handlePageClick = (e) => {
+    setActivePage(e)
+  }
+
+
+
   // 화면 숨기기
   const [isHidden, setIsHidden] = useState(false);
   const handleHide = () => {
@@ -94,8 +104,19 @@ export default function Home() {
         <p className="text-4xl leading-tight font-bold tracking-tighter text-slate-600"><span className="text-[#06CC99] italic mr-3">SPEED</span> 회원가입</p>
       </div>
 
-      {!isHidden && (
-        <div className="mt-4 mx-4 ">
+      {/* 에러화면 */}
+      {activePage === 1 &&(
+        <div className="mt-4 mx-4">
+          <div className="flex flex-col h-96 mt-2 px-8 py-4 bg-slate-100 rounded-md text-slate-600">
+            <p className="mt-6 text-xl tracking-tighter">ヽ（゜ロ゜；）ノ</p>
+            <p className="mt-6 text-xl font-bold">죄송합니다.<br />오류가 발생하였습니다.</p>
+            <p className="mt-6 text-lg"><b className="text-emerald-600">매장 관리자</b> 또는 <b className="text-emerald-600">담당자</b>에게 <br />확인해주세요 </p>
+          </div>
+        </div>
+      )}
+      {/* 이용약관 */}
+      {activePage === 2 && (
+        <div className="mt-4 mx-4">
           <p className="flex items-center text-slate-600 tracking-tighter">
             <svg xmlns="http://www.w3.org/2000/svg" className="flex w-3 h-3 mr-1 items-center fill-[#06CC99]" viewBox="0 -960 960 960">
               <path d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Z"/>
@@ -181,8 +202,8 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      {isHidden &&(
+      {/* 회원가입 입력폼 */}
+      {activePage === 3 &&(
         <div className="">
           <div className="flex mx-4 rounded-full border font-bold border-slate-200 overflow-hidden">
             {tabs.map((tab) => (
@@ -244,15 +265,24 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
-        <button className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
-        {!isHidden && (
-          <button onClick={handleHide} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">동의하고 회원가입</button>
-        )}
-        {isHidden &&(
+
+      {activePage === 1 &&(
+        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+          <button onClick={()=>handlePageClick(2)} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">다시 연결</button>
+        </div>
+      )}
+      {activePage === 2 &&(
+        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+          <button onClick={()=>handlePageClick(1)} className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
+          <button onClick={()=>handlePageClick(3)} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">동의하고 회원가입</button>
+        </div>
+      )}
+      {activePage === 3 &&(
+        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+          <button onClick={()=>handlePageClick(2)} className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
           <button disabled={!isButtonEnabled} className={`block w-full p-3 border text-center rounded-md ${isButtonEnabled ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} >저장</button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
