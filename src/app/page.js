@@ -1,13 +1,11 @@
 'use client'
 
-import Image from "next/image";
 import { useState,useRef } from 'react';
 // import Modal from "./component/modal";
 
 export default function Home() {
 
-
-  
+ 
   const tabs = [
     { id: 1, name: '일반회원',},
     { id: 2, name: '사업자회원',},
@@ -108,10 +106,21 @@ export default function Home() {
       {activePage === 1 &&(
         <div className="mt-4 mx-4">
           <div className="flex flex-col h-96 mt-2 px-8 py-4 bg-slate-100 rounded-md text-slate-600">
-            <p className="mt-6 text-xl tracking-tighter">ヽ（゜ロ゜；）ノ</p>
+            <div className="mt-6 text-xl tracking-tighter">
+              <img src="image/img_err.png" alt="error" className="w-28" />
+            </div>
             <p className="mt-6 text-xl font-bold">죄송합니다.<br />오류가 발생하였습니다.</p>
             <p className="mt-6 text-lg"><b className="text-emerald-600">매장 관리자</b> 또는 <b className="text-emerald-600">담당자</b>에게 <br />확인해주세요 </p>
           </div>
+
+          <div className="flex flex-col h-96 mt-2 px-8 py-4 bg-slate-100 rounded-md text-slate-600">
+            <div className="mt-6 text-xl tracking-tighter">
+              <img src="image/img_cong.png" alt="error" className="w-28" />
+            </div>
+            <p className="mt-6 text-xl font-bold">축하합니다.<br />가입이 완료되었습니다.</p>
+            <p className="mt-6 text-lg">지금부터 <b className="text-emerald-600">포인트 적립</b> 또는 <b className="text-emerald-600">사용</b>을 <br />할 수 있습니다.</p>
+          </div>
+
         </div>
       )}
       {/* 이용약관 */}
@@ -268,6 +277,7 @@ export default function Home() {
 
       {activePage === 1 &&(
         <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+          <button className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
           <button onClick={()=>handlePageClick(2)} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">다시 연결</button>
         </div>
       )}
