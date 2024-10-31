@@ -96,7 +96,7 @@ export default function Home() {
   const isButtonEnabled = activeTab === 1 ? isTab1Valid : isTab2Valid;
 
   return (
-    <div className="max-w-96 mx-auto">
+    <div className="max-w-96 mx-auto mb-24">
       <div className="mx-4 py-4">
         <p className="text-4xl leading-tight font-bold tracking-tighter text-emerald-600/95">투게더마트</p>
         <p className="text-4xl leading-tight font-bold tracking-tighter text-slate-600"><span className="text-[#06CC99] italic mr-3">SPEED</span> 회원가입</p>
@@ -276,19 +276,19 @@ export default function Home() {
       )}
 
       {activePage === 1 &&(
-        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+        <div className="fixed bottom-0 left-0 right-0 flex px-4 py-3 gap-2 bg-white shadow-2xl">
           <button className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
           <button onClick={()=>handlePageClick(2)} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">다시 연결</button>
         </div>
       )}
       {activePage === 2 &&(
-        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+        <div className="fixed bottom-0 left-0 right-0 flex px-4 py-3 gap-2 bg-white shadow-2xl">
           <button onClick={()=>handlePageClick(1)} className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
           <button onClick={()=>handlePageClick(3)} className="block w-full p-3 border bg-[#06CC99] rounded-md text-white">동의하고 회원가입</button>
         </div>
       )}
       {activePage === 3 &&(
-        <div className="flex mt-2 px-4 py-3 gap-2 bg-white">
+        <div className="fixed bottom-0 left-0 right-0 flex px-4 py-3 gap-2 bg-white shadow-2xl">
           <button onClick={()=>handlePageClick(2)} className="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600">취소</button>
           <button disabled={!isButtonEnabled} className={`block w-full p-3 border text-center rounded-md ${isButtonEnabled ? 'bg-[#06CC99] text-white' : 'bg-slate-100 text-slate-400'}`} >저장</button>
         </div>
