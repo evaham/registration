@@ -96,7 +96,7 @@ export default function Home() {
   const isButtonEnabled = activeTab === 1 ? isTab1Valid : isTab2Valid;
 
   return (
-    <div className="max-w-96 mx-auto mb-24">
+    <div className="flex flex-col flex-1 max-w-96 h-full mx-auto mb-24">
       <div className="mx-4 py-4">
         <p className="text-4xl leading-tight font-bold tracking-tighter text-emerald-600/95">투게더마트</p>
         <p className="text-4xl leading-tight font-bold tracking-tighter text-slate-600"><span className="text-[#06CC99] italic mr-3">SPEED</span> 회원가입</p>
@@ -125,14 +125,14 @@ export default function Home() {
       )}
       {/* 이용약관 */}
       {activePage === 2 && (
-        <div className="mt-4 mx-4">
+        <div className="relative flex-1 flex flex-col mt-4 mx-4">
           <p className="flex items-center text-slate-600 tracking-tighter">
             <svg xmlns="http://www.w3.org/2000/svg" className="flex w-3 h-3 mr-1 items-center fill-[#06CC99]" viewBox="0 -960 960 960">
               <path d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Z"/>
             </svg>
             이용약관
           </p>
-          <div className="overflow-y-scroll flex h-96 mt-2 p-4 bg-slate-100 rounded-md">
+          <div className="absolute top-6 bottom-24 overflow-y-scroll flex mt-2 p-4 bg-slate-100 rounded-md">
             <div className="flex flex-col flex-1 font-sans break-all text-slate-800">
             <b className="text-lg mb-4">회원가입 약관</b>
             <b className="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>

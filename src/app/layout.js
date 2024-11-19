@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className={notoSansKr.className}>
-      <body className="">{children}</body>
+    <html lang="ko" className={`${notoSansKr.className} h-full`}>
+      <body className="h-full">{children}</body>
     </html>
   );
 }
