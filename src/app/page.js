@@ -134,79 +134,77 @@ export default function Home() {
           </p>
           <div className="absolute top-6 bottom-24 overflow-y-scroll flex mt-2 p-4 bg-slate-100 rounded-md">
             <div className="flex flex-col flex-1 font-sans break-all text-slate-800">
-            <b className="text-lg mb-4">회원가입 약관</b>
-            <b className="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>
-            고객님의 방문에 감사드립니다.
-            <br /><br />
-            우리 매장은 개인정보보호법에 따라 고객님의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여   최소한의 개인정보를 수집하고 있으며 다음과 같이 고객님의 동의가 필요합니다.
+              <b className="text-lg mb-4">회원가입 약관</b>
+              <b className="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>
+              고객님의 방문에 감사드립니다.
+              <br /><br />
+              우리 매장은 개인정보보호법에 따라 고객님의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여   최소한의 개인정보를 수집하고 있으며 다음과 같이 고객님의 동의가 필요합니다.
 
-            <b className="mt-6 mb-4">1. 개인정보 수집 및 이용목적</b>
-            ① 회원 가입, 회원 식별, 포인트 적립 등 기본적인 서비스 제공 및 마케팅 활용을 위하여 아래와 같이 개인정보를 수집합니다.
-            <br /><br />
-            ○ 개인정보 수집 및 활용 주체 : 주식회사 투게더마트 (TEL : 1577-4550)
-            <br /><br />
-            ○ 수집항목과 이용목적
-            <br /><br />
+              <b className="mt-6 mb-4">1. 개인정보 수집 및 이용목적</b>
+              ① 회원 가입, 회원 식별, 포인트 적립 등 기본적인 서비스 제공 및 마케팅 활용을 위하여 아래와 같이 개인정보를 수집합니다.
+              <br /><br />
+              ○ 개인정보 수집 및 활용 주체 : 주식회사 투게더마트 (TEL : 1577-4550)
+              <br /><br />
+              ○ 수집항목과 이용목적
+              <br /><br />
 
-            <table className="table-fix mt-6 leading-tight">
-              <colgroup>
-                <col className="w-12" />
-                <col className="w-24" />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <td className="border border-slate-300 p-1">구분</td>
-                  <td className="border border-slate-300 p-1">수집항목</td>
-                  <td className="border border-slate-300 p-1">이용목적</td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 p-1">필수</td>
-                  <td className="border border-slate-300 p-1">성명, <br />휴대폰번호</td>
-                  <td className="border border-slate-300 p-1">포인트적립/사용, <br/>고객상담, <br/>본인확인</td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 p-1">선택</td>
-                  <td className="border border-slate-300 p-1">주소</td>
-                  <td className="border border-slate-300 p-1">물품배송</td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 p-1">선택</td>
-                  <td className="border border-slate-300 p-1">생년월일, <br />성별</td>
-                  <td className="border border-slate-300 p-1">회원관리, <br/>이벤트, <br/>마케팅분석</td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 p-1">선택</td>
-                  <td className="border border-slate-300 p-1">사업자명, <br />사업번호</td>
-                  <td className="border border-slate-300 p-1">세금계산서 발행, <br/>고객상담</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <br />
-            ② 회원가입, 개인정보 수집/이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 매장에서 제공하는 서비스(포인트 적립, 사용, 상품 배송, 이벤트 제공, 문의 대응 등)에 제약이 있을 수 있습니다.
-            <br /><br />
-            ③ 상기 이용목적 이외는 개인정보를 사용하지 않습니다.
-            <br /><br />
-            ④ 만14세 미만 이용자는 회원가입 및 개인정보 수집을 처리하지 않습니다.
-            <br /><br />
+              <table className="table-fix mt-6 leading-tight">
+                <colgroup>
+                  <col className="w-12" />
+                  <col className="w-24" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td className="border border-slate-300 p-1">구분</td>
+                    <td className="border border-slate-300 p-1">수집항목</td>
+                    <td className="border border-slate-300 p-1">이용목적</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 p-1">필수</td>
+                    <td className="border border-slate-300 p-1">성명, <br />휴대폰번호</td>
+                    <td className="border border-slate-300 p-1">포인트적립/사용, <br/>고객상담, <br/>본인확인</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 p-1">선택</td>
+                    <td className="border border-slate-300 p-1">주소</td>
+                    <td className="border border-slate-300 p-1">물품배송</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 p-1">선택</td>
+                    <td className="border border-slate-300 p-1">생년월일, <br />성별</td>
+                    <td className="border border-slate-300 p-1">회원관리, <br/>이벤트, <br/>마케팅분석</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 p-1">선택</td>
+                    <td className="border border-slate-300 p-1">사업자명, <br />사업번호</td>
+                    <td className="border border-slate-300 p-1">세금계산서 발행, <br/>고객상담</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <br />
+              ② 회원가입, 개인정보 수집/이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 매장에서 제공하는 서비스(포인트 적립, 사용, 상품 배송, 이벤트 제공, 문의 대응 등)에 제약이 있을 수 있습니다.
+              <br /><br />
+              ③ 상기 이용목적 이외는 개인정보를 사용하지 않습니다.
+              <br /><br />
+              ④ 만14세 미만 이용자는 회원가입 및 개인정보 수집을 처리하지 않습니다.
+              <br /><br />
 
-            <b className="mt-6 mb-4">2. 개인정보 처리 및 보유기간</b>
-            ① 수집한 개인정보의 수집목적이 모두 달성될 때까지 해당 개인정보를 보유합니다.
-            <br />
-            ② 회원탈퇴 요청 시 고객문의 대응 후 개인정보를 즉시 파기 합니다.
-            <br />
-            ③ 법률 기관의 요구에 의한 경우 파기기간이 연장될 수 있습니다.
-            <br /><br />
+              <b className="mt-6 mb-4">2. 개인정보 처리 및 보유기간</b>
+              ① 수집한 개인정보의 수집목적이 모두 달성될 때까지 해당 개인정보를 보유합니다.
+              <br />
+              ② 회원탈퇴 요청 시 고객문의 대응 후 개인정보를 즉시 파기 합니다.
+              <br />
+              ③ 법률 기관의 요구에 의한 경우 파기기간이 연장될 수 있습니다.
+              <br /><br />
 
-            <b className="mt-6 mb-4">3. 개인정보의 3자 제공</b>
-            고객의 별도 동의가 있거나 다른 법률에 특별한 규정이 존재하는 경우 이외에는 개인정보를 3자에게 제공하지 않습니다.
-            <br /><br />
+              <b className="mt-6 mb-4">3. 개인정보의 3자 제공</b>
+              고객의 별도 동의가 있거나 다른 법률에 특별한 규정이 존재하는 경우 이외에는 개인정보를 3자에게 제공하지 않습니다.
+              <br /><br />
 
-            <b className="mt-6 mb-4">4. 회원 탈퇴</b>
-            회원으로 가입된 고객은 언제든지 방문, 서면 등으로 회원탈퇴를 요청할 수 있습니다.
-            <br /><br /><br /><br />
-
-
+              <b className="mt-6 mb-4">4. 회원 탈퇴</b>
+              회원으로 가입된 고객은 언제든지 방문, 서면 등으로 회원탈퇴를 요청할 수 있습니다.
+              <br /><br /><br /><br />
             </div>
           </div>
         </div>
@@ -262,7 +260,6 @@ export default function Home() {
                     </div>
                   </div>
                 )}
-
                 <div className="my-2">
                   <label className="block text-sm leading-6 text-slate-500 font-bold">주소</label>
                   <div className="relative mt-1">
@@ -274,7 +271,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
       {activePage === 1 &&(
         <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl">
           <div className="flex px-4 py-3 gap-2 max-w-96 mx-auto">
